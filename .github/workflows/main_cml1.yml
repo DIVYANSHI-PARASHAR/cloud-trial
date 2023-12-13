@@ -18,19 +18,17 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v1
         with:
           python-version: '3.8'
 
       - name: Create and start virtual environment
-        run: 
+        run: |
           python -m venv venv
           source venv/bin/activate
       
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -68,4 +66,4 @@ jobs:
         with:
           app-name: 'CML1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_75EDFDAAC61B416D839FBBBCA191D369 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67E298B271BA4CB9AC002DD2DE03CF18 }}
